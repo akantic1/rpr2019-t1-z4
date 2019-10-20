@@ -24,19 +24,21 @@ public class Korpa {
     public Artikl izbaciArtiklSaKodom(String kod) {
         Artikl ar = null;
         for (int i = 0; i < brojArtikala; i++) {
-            if (korpaArtikala[i].getKod().equals(kod))
+            if (korpaArtikala[i].getKod().equals(kod)){
                 ar = korpaArtikala[i];
-            for (int j = i; j < brojArtikala; j++)
-                korpaArtikala[j] = korpaArtikala[j + 1];
-            brojArtikala--;
+                for (int j = i; j < brojArtikala; j++)
+                    korpaArtikala[j] = korpaArtikala[j + 1];
+                break;
+            }
         }
+        brojArtikala--;
         return ar;
     }
 
     public int dajUkupnuCijenuArtikala() {
         int ukupnaCijena = 0;
-        for(Artikl ar : korpaArtikala){
-            ukupnaCijena += ar.getCijena();
+        for (int i = 0; i < brojArtikala; i++){
+            ukupnaCijena += korpaArtikala[i].getCijena();
         }
         return ukupnaCijena;
     }
