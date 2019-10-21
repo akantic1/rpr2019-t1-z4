@@ -20,6 +20,7 @@ public class Supermarket {
                 break;
             }
         }
+        artikli[brojArtikala] = null;
         brojArtikala--;
         return ar;
     }

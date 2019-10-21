@@ -31,6 +31,7 @@ public class Korpa {
                 break;
             }
         }
+        korpaArtikala[brojArtikala] = null;
         brojArtikala--;
         return ar;
     }
